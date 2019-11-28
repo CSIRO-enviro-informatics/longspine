@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>LongSpine DB</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="widther">
+        <div id="header">
+            <div id="title" style="float:left;">
+                <a href="https://longspine.cat">LongSpine DB</a>
+            </div>
+            <div style="float:right;">
+                <a href="home">Home</a> |
+                <a href="principles">Principles</a> |
+                <a href="models">Models</a> |
+                <a href="data">Data</a> |
+                <a href="cache">Cache</a> |
+                <a href="sparql">Query endpoint</a> |
+                <a href="examples">Examples</a> |
+                <a href="about">About</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="container-content">
+                <h1>SPARQL Query UI</h1>
+    <p>
+        This page allows you to lodge <a href="https://en.wikipedia.org/wiki/SPARQL">SPARQL</a> queries against the
+        <a href="https://en.wikipedia.org/wiki/Triplestore">triplestore</a> (graph database) that stores all of the
+        LongSpine content.
+    </p>
+    <h2 id="editor"><a href="#editor">&#167;</a> Query Editor <sup><a href="">&uarr;</a></sup></h2>
+    <h3>Test Query</h3>
+    <p>
+        Here is an example query you can copy 'n paste into the text area below to test with. It counts the number of
+        <code>skos:Concept</code> instances in the AGIFT vocabulary and should return 583:
+    </p>
+<pre>PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+SELECT (COUNT(?c) AS ?count)
+FROM &lt;https://data.naa.gov.au/def/agift&gt;
+WHERE {
+  ?c a skos:Concept .
+}</pre>
+    <h4>Enter your SPARQL query in the text box below:</h4>
+    <div id="yasgui" style="margin-bottom: 25px;"></div>
+
+    <link href='//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.css' rel='stylesheet' type='text/css'/>
+    <script src='//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.js'></script>
+
+    <script type="text/javascript">
+        var yasgui = YASGUI(document.getElementById("yasgui"), {
+            yasqe:{sparql:{endpoint:'https://db.longspine.cat/repositories/main'}} // default endpoint
+        });
+    </script>
+    <h2 id="url"><a href="#url">&#167;</a> URL queries <sup><a href="">&uarr;</a></sup></h2>
+        </div>
+        <footer>
+            <p>
+                The Longitudinal Spine of Government functions (LongSpine) is a <a href="https://data61.csiro.au/en/Collaborate-with-us/Government/Platforms-For-Open-Data">Platforms for Open Data (PfOD)</a>-funded collaboration project between <a href="https://www.csiro.au/">CSIRO</a>, <a href="https://www.finance.gov.au/">Department of Finance</a> &amp; <a href="http://naa.gov.au/">National Archives of Australia</a>.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

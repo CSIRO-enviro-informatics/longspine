@@ -1,0 +1,167 @@
+---
+layout: page
+title: "Principles"
+permalink: principles
+---
+  <h1 xmlns="http://www.w3.org/1999/html">Principles</h1>
+    <p>
+        This project was established to bring methods and technologies forward to achieve new capacities within government for the use of government structure and functions data. The core idea being that descriptions (datasets) of government structure and functions (also a type of structure) could be presented in ways allowing for both interoperability (associations, cross-walking) and that the set of datasets established here could act as a <em>spine</em>, that is a set of government structure/function reference datasets for other data to associate with, see below.
+    </p>
+    <h3>Principles sections</h3>
+    <ul>
+        <li><sup><a href="#spine">&darr;</a></sup> Spine</li>
+        <li><sup><a href="#datasetsandlinksets">&darr;</a></sup> Datasets and Linksets</li>
+        <li><sup><a href="#identifiers">&darr;</a></sup> Identifiers</li>
+        <li><sup><a href="#semanticrelations">&darr;</a></sup> Semantic Relations</li>
+        <li><sup><a href="#linkeddata">&darr;</a></sup> Linked Data</li>
+        <li><sup><a href="#time">&darr;</a></sup> Time</li>
+    </ul>
+    <h2 id="spine"><a href="#spine">&#167;</a> Spine <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+        There are a series of datasets in use at by the Federal government used to describe current and past government structure/function. These datasets are related - they are all about real-world related concepts - and share many similar structures and specific objects but they are neither identical, deliberately mapped to one another or even managed by a single authority. For example, we have the <a href="">Australian Government Organisations Register (AGRO)</a> database, managed by the Department of Finance, and also the <a href="">Commonwealth Record Series (CRS)</a> database, managed by the <a href="">National Archives of Australia (NAA)</a> which both describe government structure but they are not made to work together. This is mostly due to different foci - AGOR is about government now, CRS about government in the past - and partly due to having different host agencies - nevertheless, the can, and optimally should, be linked up for cross-querying to support government research into structural chang eover time, among other things.
+    </p>
+    <p>
+        A data <em>spine</em>, as it is conceived of in this project and the <a href="http://locationindex.org">Location Index</a>, is a collection of datasets and methods for data presentation that act as an anchor point for other data. Spines are created around a theme and LongSpines's spine centers on government structure and functions.
+    </p>
+    <p>
+        LongSpine then (re)presents existing datasets about government structure/function in interoperable, machine-readable formats which allow for the best technical access to them. It also presents, for the first time, mapping datasets that allow for cross-walking of these structure/function datasets. These <em>Linksets</em> (specialised types of datasets that link other datasets together, see below) are managed independently from the original datasets allowing for independent governance of mappings.
+    </p>
+    <div class="figure">
+        <img src="images/spine.svg" style="width:900px; clear:both;" /><br />
+        <p class="caption"><strong>Figure P1:</strong> The core <em>spine</em> created by LongSpine (in grey). Items within the spine are linked to one another and further links between spine items may be assumed by joining multiple links together. Here, <code>Govt Structure Database X</code> may be crosswalked with <code>Govt Functions Database Z</code> by following links made via <code>Govt Structure Database Y</code>. Things outside the spine, here <code>Other Data</code>, may be crosswalked to <code>Yet Other Data</code>, also outside the spine, if both external datasets are associated with parts of the spine.</p>
+    </div>
+    <p>
+        <strong>CACHE:</strong> the cache of LongSpine's elements, as described on the <a href="cache">Cache Page</a>, is a conveninet way of accessing the spine's content but not the only way or the point of truth. See that page for more details.
+    </p>
+    <h2 id="datasetsandlinksets"><a href="#datasetsandlinksets">&#167;</a> Datasets and Linksets <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+      LongSpine contains a series of Datasets - databases and collections of information - about government structure, such as the <a href="data#crs">Commonwealth Record Series (CRS) database</a>. It also contains a series of vocabularies of government functions, such as the <a href="data#aao">Administrative Arrangement Orders</a>. While these vocabularies are different in size and structure to the government structural datasets, we will refere to them also as Datasets for these Datasets and vocabularies are all managed in a similar way: as a single, homogeneous dataset, with few connections to other Datasets. For example, the National Archives of Australia manages the CRS database as a singl, stand-alone Datasets not dependent on any thing else that NAA doesn't also manage.
+    </p>
+    <p>
+      LongSpine also contains a series of datasets that join other datasets and we call these <em>Linksets</em>. Linksets are an interesting sort of dataset since they potentially cross jurisdictions - from one agency's Dataset to another. It would be possible to create multiple, different, joins between Datasets with different methods or with different levels of authority. For this reason, Linksets are published independently from individual Datasets. An example of a cross-jurisdictional Linkset is the <a href="data#agiftcofoga">AGIFT/COFOG-A Linkset</a> which joins the <a href="data#agift">AGIFT</a> and <a href="data#cofoga">COFOG-A</a> vocabularies (remember, these are Datasets!) published by the NAA and the Australian Bureau of Statistics respectively. Figure P2 below shows a conceptual view of a Linkset.
+    </p>
+    <p>
+        The formal definitions of <em>Dataset</em> and <em>Linkset</em>, as used by LongSpine are taken directly from the <a href="http://locationindex.org">Location Index (LocI) project</a>'s defintion given in it's top-level ontology:
+    </p>
+    <ul>
+        <li><a href="http://linked.data.gov.au/def/loci">The LocI Ontology</a></li>
+    </ul>
+    <div class="figure">
+      <img src="images/linkset-concept.svg" style="width:900px; clear:both;" /><br />
+      <p class="caption"><strong>Figure P2:</strong> An example Linkset ("A/B") between Datasets A &amp; B. The Linkset contains both dataset-level metadata (who published it, when, what methods were used to generate it) and a series of links that actually joint the target Datasets. Here Dataset A element A2 links to Dataset B element B1, and A4 to B3.</p>
+    </div>
+    <p>
+      Since Linksets are presented separately from the Datasets they join, multiple Linksets can be published that join the same Datasets. If two methods, X &amp; Y, were used to join Datasets A & B in different ways, you could publish two Linksets, as per Figure P3.
+    </p>
+    <div class="figure">
+      <img src="images/linkset-multiple.svg" style="width:500px; clear:both;" /><br />
+      <p class="caption"><strong>Figure P3:</strong> Two Linksets, A/B 1 &amp; A/B 2 joining Datasets A &amp; B created using different methods.</p>
+    </div>
+    <p>
+      Due to the way graph database systems such as the LongSpine cache work, users can use which elements are used to answer queries they pose. This means that a user could query a system containing the elements in Figure P3 and decide which of the two Linksets are to be used to make joins. This allows any/all joining methods to be implemented but then to be used only where appropriate.
+    </p>
+    <h2 id="identifiers"><a href="#identifiers">&#167;</a> Identifiers <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+        The primary purpose of LongSpine, and all similar spines, is to identify a set of things within a domain that can be used as references for other information within that domain.
+        To achieve this, the particular identifiers used for LongSpine items need to be considered carefully.
+    </p>
+    <p>
+        With multiple Datasets and Linksets constituting LongSpine's spine, it's important to be able to unambiguously identify them as a whole as well as the smaller elements within them which people will ultimately use as reference items. Datasets such as the <a href="data#agor">Australian Government Organisations Register (AGOR)</a> are identified with dataset identifiers (AGOR: <code>http://linked.data.gov.au/dataset/agor</code>), vocabularies such as <a href="data#cofog-a">COFOG-A</a> and LongSpine's part models such as the <a href="data#crs-ont">CRS Ontology</a> get definitional item identifiers (COFOG-A: <code>http://linked.data.gov.au/def/cofog-a</code>, CRS Ont: <code>http://linked.data.gov.au/def/crs</code>).
+    </p>
+    <p>
+        Items within datasets, such as AGOR's representation of the Department of Prime Minister &amp; Cabinet are identified with a derivative of the dataset they are within's identifier, as are things within vocabularies & ontologies. For instance, The AAO Ontology's definition of a <em><a href="http://linked.data.gov.au/def/aao#Matter">Matter</a></em> is <code>http://linked.data.gov.au/def/aao#Matter</code> which derives from the AAO ontology's identifier, <code>http://linked.data.gov.au/def/aao</code>, + the specific part identifying the item, <code>Matter</code>.
+    </p>
+    <h4>URI Identifiers</h4>
+    <p>
+        It's also a very useful thing to be able to discover more information about items identified. This is why we are using <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Uniform Resource Identifiers (URIs)</a> - essentially web addresses - as universally unique and resolvable (clickable) identifiers for all items in LongSpine. This is in contrast to, say, just using local database Primary Keys or data codes or even UUIDs for item identifiers. Use of URIs for identifiers is part of established Linked Data practice, see section below.
+    </p>
+    <p>
+        More examples of LongSpine identifiers are:
+    </p>
+    <ul>
+        <li><a href="https://data.naa.gov.au/def/agift/Taxation"><code>https://data.naa.gov.au/def/agift/Taxation</code></a> - the concept of the government function <em>Taxation</em> in AGIFT</li>
+        <li><a href="https://data.naa.gov.au/def/agift"><code>https://data.naa.gov.au/def/agift</code></a> - the whole AGIFT vocabulary (a dataset of functions)</li>
+        <li><a href="http://linked.data.gov.au/def/crs#CommonwealthAgency"><code>http://linked.data.gov.au/def/crs#CommonwealthAgency</code></a> - the definition of a <em>Commonwealth Agency</em> within the CRS Ontology (the CRS dataset's data model)</li>
+        <li><a href="http://linked.data.gov.au/def/crs"><code>http://linked.data.gov.au/def/crs</code></a> - the whole CRS data model</li>
+        <li><a href="http://linked.data.gov.au/dataset/agiftcrs-th"><code>http://linked.data.gov.au/dataset/agiftcrs-th</code></a> - the AGIFT/CRS-Th Linkset (joins the AGIFT & CRS Thesaurus vocabs)</li>
+    </ul>
+    <h4>URI Identifier origins</h4>
+    <p>
+        Most of the URI identifiers used in LongSpine are based on the <code>linked.data.gov.au</code> web domain that was established to provide long-term stable web identifiers for Australian Government data. See the <a href="http://www.linked.data.gov.au/governance">Australian Government Linked Data Working Group's governance web page</a> for more information. Some other domains in use are agency-secific, such as <code>data.naa.gov.au</code> - the National Archives of Australia's data subdomain.
+    </p>
+    <h4>Identifier parts</h4>
+    <p>
+        Since most of the identifiers in use in LongSpine are based on Australian Government Linked Data Working Group recommendations, they mostly follow a pattern of:
+    </p>
+    <p><code>http://linked.data.gov.au/ + TYPE + / + COLLECTION_ID + / [+ CLASS_ID] + ITEM_ID</code></p>
+    <p>
+        Where the first part, <code>http://linked.data.gov.au/</code>, is the Linked Data WG's persistent domain, the second, the TYPE, is either <code>def</code>, for definitional items such as vocabularies or ontologies or <code>datasets</code> for Datasets and Linksets. The COLLECTION_ID identifies the definitional item or Dataset, e.g. <code>agor</code> for the AGOR dataset or <code>crs</code> for the CRS Ontology. The CLASS_ID is optional - it's only present in Datasets &amp; Linksets and is Dataset/Linkset-specific (whatever the creator of the Dataset/Linkset chooses to indicate the class of individual items within it), e.g. <code>org</code> within the AGOR dataset to indicate an Organisation. The last part, the ITEM_ID, identifies a definitional item or vocabulary concept or a particular dataset item and is definitional item / Dataset-dependent.
+    </p>
+    <p>
+        Wherever possible, previously existing, well-known, item IDs for things have been used. For example, in <a href="http://www.ausstats.abs.gov.au/ausstats/subscriber.nsf/0/418BDDEBD088A012CA257F230019D433/$File/55140_2015.pdf">the original ABS, non-Semantic Web, publication of COFOG-A</a>, the concept of <em>Financial and fiscal affairs</em> has the code <em>0112</em> so the URI identifier for this item is:
+    </p>
+    <p><code>http://linked.data.gov.au/ + TYPE + / + COLLECTION_ID + / + ITEM_ID</code><br />==<br /><code>http://linked.data.gov.au/def/cofog-a/0112</code></p>
+    <p>
+        The test identifier for <em>Department of Northern Australia, Central Office</em> within the CRS Dataset is based on the CRS Datasbase's code of CA 1889 and is:
+    </p>
+    <p><code>http://test.linked.data.gov.au/dataset/crs/commonwealthAgency/1889</code></p>
+    <h2 id="semanticrelations"><a href="#semanticrelations">&#167;</a> Semantic Relations <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+      <a href="https://www.w3.org/standards/semanticweb/">Semantic Web</a> data models use typed relationships between objects. So, while we can say that a <code>Thing</code> may be <code>partOf</code> another (larger) <code>Thing</code>, we can specialise this relationship and perhaps say that a particular CRS <code>CommonwealthOrganisation</code> is a <code>subOrganizationOf</code> of a <code>CommonwealthAgency</code>. Not only is there a very rich set of mechanics within the Semantic Web's methods to make specialised relationships, this project utilises many specialised relations already defined within the area of organisations and functions, such as the <a href="https://www.w3.org/TR/vocab-org/">Organization Ontology</a>'s <a href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>subOrganizationOf</code></a>.
+    </p>
+    <div class="figure">
+      <img src="images/specialised-relations.svg" style="width:400px; clear:both;" /><br />
+      <p class="caption"><strong>Figure P4:</strong> Specialisation of part/whole relations for firstly an Organisations context and secondly the more specialised CRS context</p>
+    </div>
+    <p>
+      The sort of specialisation of relationship, as well as the Semantic Web's ability to specialise objects (an <code>Organisation</code> is a specialised tpy eof <code>Things</code>) allows projects like LongSpine to implement specialised models of things and yet also generalised models that allow for interoperability across specialised elements. For example, where we have <code>Government Entity</code> in AGO and we have <code>Commonwealth Agency</code> in the CRS, we can deal with each <em>as is</em> - with all the properties expected of them in their orignal datasets - but also deal with either as a a specialisation of an <code>Organisation</code> and thus, at a certain level of abstraction, interoperate across the datasets on that basis.
+    </p>
+    <h2 id="linkeddata"><a href="#linkeddata">&#167;</a> Linked Data <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+      Where the Semantic Web is a conceptual way of relating data, <a href="https://www.w3.org/standards/semanticweb/data">Linked Data</a> is a set of mechanics for actually implementing Semantic Web data over the Internet. Linked Data relies on data being modelled according to models such as the Semantic Web models LongSpine uses and for elements to be identified with URIs, again as LongSpine does.
+    </p>
+    <p>
+      LongSpine uses Linked Data mechanics to allow the the data and models that make it up as to be presented as distributed elements, accessed over the Internet. This allows different agencies to publish point-of-truth data models and have it work together. For example, the <a href="data#pbs">Portfolio Budget Statement (PBS)</a> data can be delivered by the Department of Finance using the system of their choice and yet still be technically, and instantly, interoperable with the CRS data from the National Archives of Australia delivered through different chanel.
+    </p>
+    <p>
+      Systems such as this LongSpine DB can cache information from disparate sources for ease of use but caches such as this are <strong><em>not</em></strong> to be regarded as points of truth for the data - they are <em>not</em> the spine, only a temporary utilisation of it. The spine exists as the collective whole of the distributed datasets and models.
+    </p>
+    <h4>Modelled Interoperability</h4>
+    <p>
+        The elements of the spine are able to interoperate - to be crosswalked and used together - due to their adherence to a common set of Semantic Web models. See the <a href="models">Models Page</a> for more information.
+    </p>
+    <h4>Technical Interoperability</h4>
+    <p>
+        LongSpine data can be technically aggregated for use since, as per Linked Data norms (see general information on Linked Data, such as <a href="https://en.wikipedia.org/wiki/Linked_data">Wikipedia's article</a>) all of the information in it is delivered as <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework">Resource Description Framework (RDF)</a> data. For example, to pull all of the parts of LongSpine into a single cache for querying, one need only collect the items represented in RDF and load them into an RDF-capable database. See the <a href="cache">Cache Page</a> for more information.
+    </p>
+    <h4>Item's home pages</h4>
+    <p>
+        As per Linked Data norms again, all LongSpine items (Datasets, Vocabs etc.) have home or landing pages on the internet in human-readable HTML. This is so that any item, when it's identifier is follow, can be simply seen and understood. Some examples are:
+    </p>
+    <ul>
+        <li><a href="http://linked.data.gov.au/def/crs">http://linked.data.gov.au/def/crs</a> - CRS Ontology home page</li>
+        <li><a href="http://data.naa.gov.au/def/agift">http://data.naa.gov.au/def/agift</a> - AGIFT home page</li>
+    </ul>
+    <h2 id="time"><a href="#time">&#167;</a> Time <sup><a href="">&uarr;</a></sup></h2>
+    <p>
+      Time (temporality) is one of the conceptual pillars of the LongSpine project. The organisations and functions that make up the core data of the spine are related structurally - Function X is performed by Organisation Y - and also temporally - Function X was performed by Organisation Y <em>at time z</em> or Organisation A was the precursor of Organisation B. A sophisticated handling of time by the spine will allow users of it to integrate datasets with time-based queries.
+    </p>
+    <p>
+      To facilitate a powerful handing of time, elements within Datasets and Linksets within LongSpine are associated with temporal objects (instants and ranges) to indicate their real-world temporal natures. This is in accordance with the way <a href="https://www.w3.org/TR/owl-time/">Time Ontology in OWL</a> models time. Some examples:
+    </p>
+    <ul>
+      <li><code>Paul Keating</code> had an association with the <code>House of Representatives</code> as <code>Member for Blaxland</code> for the time <code>Interval</code> starting 25<sup>th</sup> of October, 1969 and ending 23<sup>rd</sup> April, 1996.</li>
+      <li>
+        Responsibility for the regulation of water function was held by the Department of Agriculture during the time period in which <code>Administrative Arrangement Order #80</code> was in effect
+      </li>
+    </ul>
+    <p>
+      The first point above just indicates how an information object - the CRS record about Paul Keating - represents a relationship that was in effect for a certain time. The second point indicates how particular time intervals can be named - here the time period in which <code>Administrative Arrangement Order #80</code> was in effect - and other objects associated with them.
+    </p>
+    <p>
+      By naming important time intervals and instants, we can calculate things using them without having to actually check specific days. We can, for instance, ask "Which where all of the government agencies responsible for agriculture <em>during the Hawke Prime Mininstership?"</em>. Figure P5 below shows some of the relations between objects we can have as a result of using the Time Ontology in OWL.
+    </p>
+    <div class="figure">
+      <img src="images/time-relations.svg" style="width:1000px; clear:both;" /><br />
+      <p class="caption"><strong>Figure P5:</strong> Possible relations using the Time ontology in OWL. A. an object can be associated with a time interval to show it has real-world temporality. B. A relationship between objects can do likewise. C. Objects can have temporal relations between them such as <code>before</code> and <code>after</code>. D. & E. Further temporal relations are <code>intervalMeets</code> (Y starts where X ends) and <code>intervalDuring</code>.</p>
+    </div>
