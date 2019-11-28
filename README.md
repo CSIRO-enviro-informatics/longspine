@@ -1,4 +1,4 @@
-# longspine
+# longspine.cat
 This repository contains the content of the https://longspine.cat website.
 
 ## Rights & License
@@ -10,7 +10,7 @@ This ontology and all other content in this repository are licensed under the
 
 
 ## Contacts
-*technical*:
+*technical*:  
 **Nicholas Car**  
 *formerly of CSIRO, now [SURROUND Australia Pty Ltd](https://surroundaustralia.com)*  
 Brisbane, Australia  
@@ -18,7 +18,7 @@ Brisbane, Australia
 <http://orcid.org/0000-0002-8742-7730>  
 
 
-*CSIRO contact*:
+*CSIRO contact*:  
 **Gavin Walker**  
 *Principle Experimental Scientist*  
 BlackMountain, ACT  
