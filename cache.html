@@ -6,11 +6,11 @@ permalink: cache
     <h1>LongSpine Cache</h1>
     <section>
       <p>
-          All of the models and data for LongSpine listed on the <a href="models">Models</a> &amp; <a href="data">Data</a> pages are loaded into the cache that this page details and which the <a href="sparql">Query endpoint</a> page provides query access to. This allows you to run either the example queries listed on the <a href="examples">Examples</a> page or, in fact, any <a href="http://www.w3.org/TR/sparql11-query/">SPARQL query language</a> queries you wish!
+          All of the models and data for LongSpine listed on the <a href="models">Models</a> &amp; <a href="data">Data</a> pages are best loaded into a cache for easy data access. With a 'triplestore' cache, you can run either the example queries listed on the <a href="examples">Examples</a> page or, in fact, any <a href="http://www.w3.org/TR/sparql11-query/">SPARQL query language</a> queries you wish!
       </p>
       <h3>Cache sections</h3>
       <ul>
-          <li><sup><a href="#what">&darr;</a></sup> What is the cache?</li>
+          <li><sup><a href="#what">&darr;</a></sup> What is a Semantic Web graph cache?</li>
           <li><sup><a href="#namedgraphs">&darr;</a></sup> Named Graphs</li>
           <li><sup><a href="#inferencing">&darr;</a></sup> Inferencing</li>
           <li><sup><a href="#dataloading">&darr;</a></sup> Data Loading</li>
@@ -19,19 +19,25 @@ permalink: cache
       </ul>
     </section>
     <section>
-      <h2 id="what"><a href="#what">&#167;</a> What is the cache? <sup><a href="">&uarr;</a></sup></h2>
+      <h2 id="what"><a href="#what">&#167;</a> What is a Semantic Web graph cache? <sup><a href="">&uarr;</a></sup></h2>
       <p>
-          The LongSpine cache is an <a href="https://www.w3.org/2001/sw/wiki/RDF">RDF</a> <em><a href="https://en.wikipedia.org/wiki/Triplestore"></a>triplestore</em>, that is, a node-and-edge graph database that stores RDF data. The cache's purpose is to allow queries across all the elements loaded into it so you can use it to query from vocab to vocab (via Linksets), vocab to Dataset and across Datasets.
+          The a cache of <a href="https://www.w3.org/2001/sw/wiki/RDF">RDF</a> data is usually called a <em><a href="https://en.wikipedia.org/wiki/Triplestore"></a>triplestore</em>, that is, a node-and-edge graph database that stores RDF data. Caches' purposes are to allow queries across all the elements loaded into them so you can use one to query from vocab to vocab (via Linksets), vocab to Dataset and across Datasets is all the component items are loaded.
       </p>
       <p>
-          Since this is an RDF triplestore, the  <a href="http://www.w3.org/TR/sparql11-query/">SPARQL query language</a> is supported. You may either place queries directly into the text box which the <a href="sparql">Query endpoint</a> page provides or you may lodge queries as web address Query String Argument URLs - see the Query endpoint page for details.
-      </p>
-      <h4>What the cache is not</h4>
-      <p>
-          The cache itself is <strong><em>NOT</em></strong> the LongSpine's <em>spine</em>! As noted in the <a href="principles#spine">Principles Page's <em>Spine section</em></a>, the spine is "...a collection of datasets and methods for data presentation that act as an anchor point for other data..." thus the spine <strong>is</strong> the LongSpine outputs and the fact that they have common purpose. This cache is only a convenient way to access all of the spine's content.
+        Unlike other databases, e.g. relational or noSQL, RDF triplestores queqire essentially no configuration to well index and link disparate data items loaded into them. This is because RDF data is already fully defined - the data schema is present within the data itself - and triplestores index RDF data in predictable ways, regardless of the particular data.
       </p>
       <p>
-          This spine/cache distinction must be made since it's possible to create multiple or partial caches of the LongSpine's spine for multiple purposes and the conveninence of the cache shouldn't distract from the spine's points-of-truth which are the hole (namespace) locations of the models and datasets which the <a href="models">Models</a> &amp; <a href="data">Data</a> pages list.
+          With most modern RDF triplestores, the  <a href="http://www.w3.org/TR/sparql11-query/">SPARQL query language</a> is supported. Like SQL for relational databases, you can expect to use the same queries regardless of the specific product used. Unlike relational SQL though, SPARQL queries also have stnadardised input methods and output formats so their use is somewhat more sntadardised accross implementations than SQL.
+      </p>
+      <h4>What a cache is not</h4>
+      <p>
+          A cache itself is <strong><em>NOT</em></strong> the LongSpine's <em>spine</em>! As noted in the <a href="principles#spine">Principles Page's <em>Spine section</em></a>, the spine is "...a collection of datasets and methods for data presentation that act as an anchor point for other data..." thus the spine <strong>is</strong> the LongSpine outputs and the fact that they have common purpose. A cache is only a convenient way to access all of the spine's content.
+      </p>
+      <p>
+        Having said that, a related project, the <a href="http://locationindex.org"></a>Location Spine (LocI)</a> has a main, supported, cache and while that system's <em>spine</em>, like this one, is not the cache, that project's cache may easily be conflated with the spine. In time, a well-known, supported, cache of LongSpine data may emerge but multiple caches of all or part of this spine's content may always be created.
+      </p>
+      <p>
+          Just repreating: this spine/cache distinction must be made since it's possible to create multiple or partial caches of the LongSpine's spine for multiple purposes and the conveninence of the cache shouldn't distract from the spine's points-of-truth which are the hole (namespace) locations of the models and datasets which the <a href="models">Models</a> &amp; <a href="data">Data</a> pages list.
       </p>
     </section>
     <section>
